@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="MarvelCharacters"
+            type="com.example.marvel.network.MarvelCharacters" />
+
+        <variable
+            name="clickListener"
+            type="com.example.marvel.ui.MarvelListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="179dp"
+        android:layout_margin="8dp"
+        android:onClick="@{() -> clickListener.onClick(MarvelCharacters)}"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="4dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="194dp"
+            android:layout_height="177dp"
+            android:contentDescription="@string/app_name"
+            app:imageUrl="@{MarvelCharacters.thumbnail.img}"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/marvel_name"
+            android:layout_width="197dp"
+            android:layout_height="57dp"
+            android:layout_marginStart="195dp"
+            android:text="@{MarvelCharacters.name}"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Avengers" />
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>
