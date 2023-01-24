@@ -34,6 +34,8 @@ class MarvelDetailFragment(private val marvelDetailFragmentFactory: (() -> ViewM
             shareHero()
         }
 
+
+
         return binding.root
 
     }
